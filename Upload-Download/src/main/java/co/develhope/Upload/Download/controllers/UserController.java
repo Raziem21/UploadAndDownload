@@ -26,8 +26,9 @@ public class UserController {
     private UserService userService;
 
     @PostMapping("/create")
-    public void create(@RequestBody User user) {
+    public User create(@RequestBody User user) {
         userRepository.save(user);
+        return user;
     }
 
     @PostMapping("/{id}/profile")
